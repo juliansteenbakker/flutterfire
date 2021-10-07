@@ -76,11 +76,8 @@ public class FlutterFirebaseFunctionsPlugin
           Object parameters = arguments.get("parameters");
 
           if (origin != null) {
-            // TODO(helenaford): Placeholder logic for useEmulator when available
-            // Uri originUri = Uri.parse(origin);
-            // firebaseFunctions.useEmulator(originUri.getHost(), originUri.getPort());
-
-            firebaseFunctions.useFunctionsEmulator(origin);
+             Uri originUri = Uri.parse(origin);
+             firebaseFunctions.useEmulator(originUri.getHost(), originUri.getPort());
           }
 
           HttpsCallableReference httpsCallableReference =
